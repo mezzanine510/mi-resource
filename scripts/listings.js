@@ -1,6 +1,6 @@
 window.onload = () => {
     if (sessionStorage.length === 0 || sessionStorage.loggedIn === 'false') {
-        window.location.href = '/miresource';
+        window.location.href = '/';
     }
 }
 
@@ -73,7 +73,7 @@ const populateList = (products) => {
         productList.appendChild(item);
 
         const image = document.createElement('img');
-        image.src = '/miresource/images/table.jpg';
+        image.src = '/images/table.jpg';
         image.classList.add('card-img-top');
         item.appendChild(image); 
 
@@ -115,14 +115,14 @@ searchForm.addEventListener('submit', (event) => {
 
 // Prevent min price > max price
 minPrice.addEventListener('change', (event) => {
-    if (maxPrice.value == '') return;
-    if (minPrice.value > maxPrice.value) minPrice.value = parseInt(maxPrice.value);
+    if (!maxPrice.value) return;
+    if (parseInt(minPrice.value) > parseInt(maxPrice.value)) minPrice.value = parseInt(maxPrice.value);
 }, false);
 
 // Prevent max price < min price
 maxPrice.addEventListener('change', (event) => {
-    if (minPrice.value == '') return;
-    if (maxPrice.value < minPrice.value) maxPrice.value = parseInt(minPrice.value);
+    if (!minPrice.value) return;
+    if (parseInt(maxPrice.value) < parseInt(minPrice.value)) maxPrice.value = parseInt(minPrice.value);
 }, false);
 
 nextButton.addEventListener('click', (event) => {

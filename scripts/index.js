@@ -14,7 +14,7 @@ const submitLoginForm = async (url) => {
         headers: {
             'Content-Type': 'application/json',
             'Authorization': 'Basic ' + btoa(username + ":" + password)
-        }
+        }                               
     }
 
     const response = await fetch(url, postOptions);
@@ -23,7 +23,7 @@ const submitLoginForm = async (url) => {
         sessionStorage.setItem('username', username);
         sessionStorage.setItem('password', password);
         sessionStorage.setItem('loggedIn', 'true');
-        window.location.href = '/miresource/listings.html';
+        window.location.href = '/listings.html';
     }
     else {
         document.getElementById('loginError').style.display = 'block';
