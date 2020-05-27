@@ -15,7 +15,7 @@ const searchBar = document.getElementById('searchBar');
 const resultsPerPage = document.getElementById('resultsPerPage');
 const minPrice = document.getElementById('minPrice');
 const maxPrice = document.getElementById('maxPrice');
-const productsList = document.getElementById('productList');
+const productList = document.getElementById('productList');
 const nextButton = document.getElementById('nextButton');
 
 let postBody = {};
